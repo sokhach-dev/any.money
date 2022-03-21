@@ -8,9 +8,9 @@ $sec_key_api="PlexfqOuASCFFF83vSB2fPhBnfK0_gwuZ0jvjigZ3xFPKXFEtC2hGX_TO37Sx9QCv7
 $merchant="5375";
 $amount="1"; // todo для bic проверка min: 0.001  max: 50 ? разделитель точка запятая ?
 $in_curr="BTC";
-$payway="bitcoin";
+$payway="btc";
 $externalid=date("YmdHis"); ;
-$expiry="600";
+$expiry="1h30m";
 $client_email="customer@domain.com";
 $is_multipay= "true";
 $callback_url="https://example.com/order_handler";
@@ -27,7 +27,7 @@ $data=[
     "is_multipay" => $is_multipay,
     "callback_url" => $callback_url,
     "redirect_url" => $redirect_url,
- ];
+];
 ksort($data);
 
 var_dump($data);
@@ -61,7 +61,7 @@ $form='
   <input type="hidden" name="in_curr" value="'.$in_curr.'"/>
   <input type="hidden" name="payway" value="'.$payway.'"/>
   <input type="hidden" name="externalid" value="'.$externalid.'"/>
-  <input type="hidden" name="expiry" value="'.$expiry.'0"/>
+  <input type="hidden" name="expiry" value="'.$expiry.'"/>
   <input type="hidden" name="client_email" value="'.$client_email.'"/>
   <input type="hidden" name="is_multipay" value="'.$is_multipay.'"/>
    <input type="hidden" name="callback_url" value="'.$callback_url.'"/>
